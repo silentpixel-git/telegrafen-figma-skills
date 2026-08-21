@@ -1,9 +1,9 @@
 ---
-name: telegrafen-ux-writing-v1-1
+name: telegrafen-ux-writing-v1-2
 description: Use when creating, rewriting, directly updating, or QAing Norwegian Bokmål UX writing for Telenor private-customer designs and interfaces. Do not use for campaigns, articles, product pages, emails, push notifications, or other long-form copy.
 ---
 
-# Telegrafen UX Writing v1.1
+# Telegrafen UX Writing v1.2
 
 Use this guide when creating, rewriting, or reviewing Norwegian UX copy for Telenor private customers in a design or interface. Write in Norwegian Bokmål.
 
@@ -32,6 +32,20 @@ Avoid jargon, English phrasing translated word-for-word, fear, blame, slang, emp
 Good: `Vi kunne ikke lagre endringen. Prøv igjen.`
 
 Avoid: `Oops! Noe gikk galt med systemet vårt.`
+
+## Uppercase and sentence case
+
+Norwegian interface copy uses sentence case. Start a sentence or heading with a capital letter, then use lowercase except where Norwegian spelling requires a capital letter.
+
+- Do not write headings, buttons, links, labels, status messages, price qualifiers, or complete sentences in all caps.
+- Do not use uppercase for emphasis, urgency, hierarchy, or visual impact. Use clear wording and the approved Telegrafen text style instead.
+- Preserve official product names, acronyms, initialisms, codes, and protected wording exactly, such as `SIM`, `PIN` and `TV`.
+- When rewriting uppercase source copy, convert it to natural sentence case unless it is a verified exception.
+- If an approved component or visual treatment forces all caps, flag the conflict. Do not compensate by storing the source copy in uppercase.
+
+Good: `Sjekk dekningen din`
+
+Avoid: `SJEKK DEKNINGEN DIN`
 
 ## Required context
 
@@ -125,7 +139,7 @@ Review for:
 
 - clarity on first reading;
 - correct use of `du` and `vi`;
-- sentence case and role-appropriate punctuation;
+- sentence case, with uppercase limited to verified names, acronyms, initialisms, codes, and protected wording;
 - a specific next step where needed;
 - descriptive link text and specific labels for consequential actions;
 - useful help text rather than repeated labels;
