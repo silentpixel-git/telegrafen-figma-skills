@@ -1,4 +1,4 @@
-# Telegrafen Figma skills
+# Telegrafen design skills
 
 Portable Agent Skills for creating and reviewing private-customer Telenor designs with the Telegrafen Design System. Each skill has a self-contained `SKILL.md` entry point for use in Figma Make and other systems that support the Agent Skills format.
 
