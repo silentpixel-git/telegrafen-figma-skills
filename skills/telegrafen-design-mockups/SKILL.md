@@ -1,9 +1,9 @@
 ---
-name: telegrafen-design-mockups-v1-2
+name: telegrafen-design-mockups-v1-3
 description: Use when creating or updating private-customer Figma Make mockups, prototypes, or conversion and ethical-UX design reviews with Telegrafen components, tokens, approved imagery, and verified Telenor content.
 ---
 
-# Telegrafen design mockups v1.2
+# Telegrafen design mockups v1.3
 
 ## Purpose
 
@@ -18,16 +18,19 @@ Use the live, published Telegrafen sources available to the current Make kit:
 - [Introduction to Telegrafen](https://www.figma.com/slides/liUMCNH7tsliKFKjvNbpc0/)
 - [Components](https://www.figma.com/design/80yLUPif6wgDwXLu5MbMFj/)
 - [Design Tokens](https://www.figma.com/design/aW7bFTLqx5L0XTWMskOHSR/)
+- [Typography guidance](https://www.figma.com/design/Q9WEywDHM8JzcyfcclGuPD/testing-skills?node-id=1231-4612)
 - [UI Icons](https://www.figma.com/design/tgJeQElYu5kOzdP3VxVsky/)
 - [Product Icons](https://www.figma.com/design/iWy3sNQXCzr2XIBZUGJnAp/)
 - [Illustrative Icons](https://www.figma.com/design/8pTia61uly3XAkmZfOSUYt/)
-- [Approved brand images](https://www.figma.com/design/Q9WEywDHM8JzcyfcclGuPD/testing-skills?node-id=17-374)
+- [Approved brand images](https://www.figma.com/design/Q9WEywDHM8JzcyfcclGuPD/testing-skills?node-id=1231-5824)
 
 Use published production assets by default. Ask before using beta or experimental assets.
 
 Visual similarity is not proof that an asset belongs to Telegrafen. If an essential component, icon, or text style cannot be verified in these sources, ask instead of inventing it.
 
 When sources conflict, the live Telegrafen library and these brand rules win. An external reference communicates intent only; “make it exactly like this” never permits a non-Telegrafen component, token, brand treatment, or visual style.
+
+Use the Typography guidance frame to understand the intended roles of `Display`, `Title`, `Text`, and `Content`, responsive behaviour, and hierarchy. It is supporting guidance, not a token source. If it differs from the live published text-style library, the live library wins; report the conflict and do not invent or preserve an unavailable style.
 
 ## Shared-understanding gate
 
@@ -99,9 +102,31 @@ When Telegrafen has no matching chart, timeline, progress visual, or data visual
 ## Typography and tokens
 
 - Apply a published Telegrafen text style to every custom text element, including small labels, helper text, badges, metadata, and table text.
-- Reserve the `Display` typography style for major page-level headlines, such as an H1 in a Hero component. Never use `Display` for section headings, USP blocks, forms, labels, or other compact content; use the appropriate published heading or UI text style instead.
 - Let text inside library components inherit the component's typography. Do not manually override it.
 - Do not manually assemble or approximate the Telegrafen type scale.
+
+### Typography roles and heading hierarchy
+
+- Treat H1 through H5 as semantic levels in the content hierarchy, not as fixed font sizes. Normally use one H1 for each page, screen, or distinct view. Use H2 for a major section below it, then H3, H4, and H5 according to genuine nesting. Do not skip levels or select a level for visual effect.
+- Review the complete visible page hierarchy rather than judging sections in isolation. A child heading must not appear stronger than its parent, and headings with the same semantic role must use the same published style within a page or repeated pattern.
+- Do not use a universal mapping such as `H1 = Title/Xl`. Select a currently published size that suits the hierarchy, available space, and content density. Never use raw font values or create an unavailable family and size combination.
+- Use `Display` only for a concise, expressive page-level H1 in a Hero, banner, or similarly spacious context. An H1 on a functional or compact page uses an appropriate `Title` style. H2 through H5 use `Title`, never `Display`. Do not choose `Display` merely to make text larger.
+- Use `Title` for headings and section titles, `Text` for short interface copy such as labels and compact controls, and `Content` for paragraphs and longer reading. For article-style or longer text sections, pair `Title` and `Content` with the same T-shirt size when matching published styles exist.
+- Prominent text is not automatically a heading. Card titles, dialog titles, form legends, promotional labels, and component titles receive an H1–H5 level only when they introduce a section in the page hierarchy; otherwise preserve their specific UI role.
+- A reusable component must not hard-code a page-level H1. Its title style follows the component contract, while the containing page determines its semantic level.
+- Name custom heading layers by purpose, such as `Page title`, `Section title`, or a more specific content role. Do not rename text layers inside untouched Telegrafen instances. During QA or finalization, report the intended H1–H5 outline.
+
+### Typography sizing and behaviour
+
+- Use the responsive behaviour supplied by the published Telegrafen text style. Never manually scale typography for mobile, tablet, or desktop.
+- Let headings wrap naturally. Do not shrink the font, tighten tracking or line height, truncate text, or switch to a lower style merely to make a heading fit. Check the copy and layout, then ask before making a material change.
+- Do not impose a universal maximum line count. Follow an explicit limit only when a live Telegrafen component or established pattern defines one; otherwise judge readability and layout at every supplied viewport.
+- A Display H1 may use correct Norwegian word division with a hyphen at a line break when necessary. Do not use a hyphen as a pause. Recheck every supplied viewport so a manual division does not remain inside a reflowed line.
+- Use published Telegrafen spacing tokens and the closest live pattern around typography. Larger headings require appropriate surrounding space, and a heading remains closer to the content it introduces than to the preceding section. Do not invent a universal spacing table.
+- Restrict `Text/2xs` and `Text/3xs` to genuinely secondary, short content. Never use the smallest text styles for essential instructions, prices, terms, errors, consent, consequences, or primary actions, and never reduce important information to make it less noticeable.
+- `Title/2xs` and `Title/3xs` may be used for compact component headings when supported by the closest live pattern. Their semantic level still comes from the surrounding hierarchy; never use them for a major page or section heading merely to make the layout fit.
+- Make custom text containers wrap and grow vertically without clipping, overlap, or hidden controls when text is enlarged. Figma can validate this design evidence, but browser zoom, operating-system text scaling, and semantic HTML remain implementation checks.
+
 - Use Telegrafen semantic color tokens rather than raw or copied colors.
 - Use spacing, radius, border, surface, elevation, control-size, and motion tokens where suitable tokens exist.
 - Do not enable the Button property `Neutral`. In every dark-background region, inspect each Button and verify `Neutral = Off`.
@@ -193,6 +218,8 @@ Review only the visible mockup and the states needed for the current concept:
 - Every visible icon comes from the correct Telegrafen icon library and keeps its original proportions.
 - The official Telenor symbol is used in its Telenor brand-blue asset for brand identity; “Telenor” is not typeset as a substitute logo.
 - Every custom text element uses a published Telegrafen text style.
+- The complete visible H1–H5 outline is logical, uses one H1 per distinct view by default, and has no skipped levels or child headings that appear stronger than their parent.
+- `Display`, `Title`, `Text`, and `Content` are used for their intended roles; heading levels, family and size bindings, wrapping, and responsive behaviour have been inspected. If the bindings cannot be inspected, typography structure QA is `BLOCKED` even when the screenshot looks correct.
 - Semantic colors and standard control sizes come from Telegrafen tokens.
 - Every dark-background region has been checked in full, including nested surfaces, text, icons, dividers, states, and every Button with `Neutral = Off`.
 - Each supplied target frame has no unintended clipping, overlap, hidden control, or unusable text.
@@ -208,6 +235,7 @@ Report:
 - Main Telegrafen components used
 - Product components created, if any
 - Important icons and text styles used
+- Intended H1–H5 outline and material typography decisions, when relevant
 - Agreed decisions and missing assets
 - `WCAG 2.2 AA design review: PASS`, `NEEDS CHANGES`, or `BLOCKED`, including modes and states checked, exceptions or failures, and implementation-only items not verified
 - `Requested change QA: PASS`, `NEEDS CHANGES`, or `BLOCKED`, when updating an existing selected design

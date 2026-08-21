@@ -1,9 +1,9 @@
 ---
-name: telegrafen-design-components-v1-1
+name: telegrafen-design-components-v1-2
 description: Use when creating, prototyping, iterating, reviewing, repairing, or finalizing Telegrafen or Telenor components in Figma.
 ---
 
-# Telegrafen component design v1.1
+# Telegrafen component design v1.2
 
 ## Core principle
 
@@ -156,7 +156,9 @@ Call the result a **draft product component** or **Telegrafen component candidat
 
 - Bind semantic Telegrafen variables and published styles wherever suitable tokens exist.
 - Use published Telegrafen text styles; do not approximate them with local font settings.
-- Reserve the `Display` typography style for major page-level headlines, such as an H1 in a Hero component. Never use `Display` for section headings, USP blocks, forms, labels, or other compact content; use the appropriate published heading or UI text style instead.
+- A reusable component must not hard-code a page-level H1. Define its title role and typography in the component contract, and let the containing page determine its semantic heading level. If consumers genuinely need different approved title treatments, expose only contractually meaningful options through the component API; never rely on detached or local text overrides.
+- Reserve `Display` for a concise, expressive page-level H1 in a Hero, banner, or similarly spacious context. Use `Title` for functional headings and section titles. Never use `Display` for H2 through H5, USP blocks, forms, labels, or compact component content, and never select it merely to make text larger.
+- Do not map H1 through H5 to universal font sizes. Use only the published `Display`, `Title`, `Text`, or `Content` style that fits the contracted role and context. Preserve natural wrapping and growth; never shrink, tighten, truncate, or change semantic level merely to make text fit.
 - Use live control-size tokens for interactive heights.
 - Do not use primitive colors, copied values, guessed token names, or arbitrary substitutes.
 - If a required semantic colour, spacing, radius, elevation, motion, or control-size token does not exist, pause and propose the missing foundation as a separate design-system decision. Never create or rename a local value to simulate a Telegrafen token.

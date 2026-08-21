@@ -13,8 +13,8 @@ skills/
 
 ## Skills
 
-- [Telegrafen design mockups](skills/telegrafen-design-mockups/SKILL.md) — Create, update, and QA Telegrafen-native mockups and prototypes. Covers tokens, components, approved imagery, accessibility, conversion and ethical-UX review, and a dated TV and broadband product reference.
-- [Telegrafen component design](skills/telegrafen-design-components/SKILL.md) — Create, iterate, review, and finalize individual Telegrafen or Telenor components in Figma.
+- [Telegrafen design mockups](skills/telegrafen-design-mockups/SKILL.md) — Create, update, and QA Telegrafen-native mockups and prototypes. Covers tokens, components, responsive typography and heading hierarchy, approved imagery, accessibility, conversion and ethical-UX review, and a dated TV and broadband product reference.
+- [Telegrafen component design](skills/telegrafen-design-components/SKILL.md) — Create, iterate, review, and finalize individual Telegrafen or Telenor components in Figma, including reusable typography contracts that respect their page context.
 - [Telegrafen UX Writing](skills/telegrafen-ux-writing/SKILL.md) — Create, update, and QA Norwegian Bokmål UX microcopy for Telenor private-customer designs and interfaces.
 
 ## Use
