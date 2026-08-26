@@ -1,9 +1,9 @@
 ---
-name: telegrafen-design-components-v1-2
+name: telegrafen-design-components-v1-3
 description: Use when creating, prototyping, iterating, reviewing, repairing, or finalizing Telegrafen or Telenor components in Figma.
 ---
 
-# Telegrafen component design v1.2
+# Telegrafen component design v1.3
 
 ## Core principle
 
@@ -166,9 +166,18 @@ Call the result a **draft product component** or **Telegrafen component candidat
 ### Icons
 
 - Any brand-identity element must use the official Telenor brand-blue symbol asset when it is available. Never recolour it or typeset or style “Telenor” to imitate a logo or wordmark. If contrast is insufficient, change the surrounding surface or placement. If the symbol cannot be found, interview the user; do not substitute text. Ordinary content may still use the word Telenor.
+- Reserve the main Telenor brand colour for the official logo or symbol. Do not use it on non-logo elements unless a current, explicit, approved Telegrafen or Telenor brand rule requires it for that exact element. Use the appropriate semantic Telegrafen colour token for every other role.
 - Use live instances from the appropriate UI Icons, Product Icons, or Illustrative Icons library.
+- Commit each repeated peer-artwork role to one non-UI icon family before selecting individual icons. Equivalent peers and their examples must never mix Product Icons and Illustrative Icons, even when every asset is individually relevant, visually related, or present in a reference.
+- A public instance-swap slot for peer artwork must use preferred values from one non-UI family and a structure sized for that family. Do not use one slot or variant set to normalize Product and Illustrative Icons into interchangeable peer artwork. Different families belong in separate roles or component contracts only when their semantic purposes genuinely differ.
+- Within a peer set, use the same supported instance size, container footprint, alignment, and colour rule. Preserve natural differences in approved artwork; never modify an icon to force identical visual weight.
+- If one family does not cover the complete peer set, choose another family that does, separate the content only when it has genuinely different roles or contracts, remove the icon property from the entire peer set when icons are non-essential, or ask and report `BLOCKED` when icons are essential. Never fill a coverage gap with the other non-UI family.
+- A UI Icon may coexist with Product or Illustrative artwork only through a clearly separate action, navigation, or status role supplied by a supported slot or nested component. It does not permit Product and Illustrative Icons to mix as peer artwork.
+- At 32 px or smaller, use UI Icons only. Above 32 px, continue to choose the family by semantic meaning; size alone never turns a UI Icon into a Product or Illustrative Icon.
+- Never display an Illustrative Icon below a 120 × 120 px instance frame.
 - Choose icons by semantic meaning. **Never change an icon's aspect ratio:** scale width and height together and use a wrapper or container when a different footprint is needed.
 - Use a supported icon size when available; do not preserve the ratio at an arbitrary size merely to make it fit.
+- Keep every icon's `Default` library colour by default. A designer may explicitly define another colour for a complete section before application, but it must use a verified semantic Telegrafen token or supported component property, apply consistently to equivalent icons, pass contrast in its light or dark context, and never use the logo-reserved main brand colour. One-off recolouring remains prohibited unless a verified semantic state requires it.
 - Never redraw, stretch, crop, generate, or substitute an icon.
 - If no suitable icon can be verified, interview the user instead of approximating one.
 
@@ -176,6 +185,20 @@ Call the result a **draft product component** or **Telegrafen component candidat
 
 - Use representative Norwegian Bokmål content and the Telegrafen UX Writing skill when available. Do not use lorem ipsum or invent commercial facts. Test realistic short and long content while keeping copy secondary to the component contract.
 - Keep editorial imagery swappable and outside the component's structural identity unless an approved asset is intrinsic to the component. Use only user-provided or approved Telenor imagery in examples; never package generated or third-party lookalikes as defaults.
+- Keep every approved image source intact. Do not apply local strokes, borders, shadows, blurs, glows, recolouring, distortion, or other effects to the image itself. An approved presentation frame may crop the visible view without altering the source asset; any wrapper treatment must use a verified Telegrafen token, published style, or supported component property.
+
+### Lists, cards, and repeated content
+
+- Every rendered list item must contain meaningful primary content. Never add blank, invisible, placeholder, or whitespace-only items to create spacing, fill a grid, balance columns, or equalize container heights.
+- Omit unavailable items. Use the approved Telegrafen Skeleton pattern for loading and an appropriate empty state for a genuinely empty result; never represent either with an empty List instance.
+- Optional fields inside a valid item may be absent only when the component supports that state.
+- Default a repeated static icon–title–description benefit contract to an open item or list pattern, not a Card. Create or preserve a Card contract only when the boundary communicates independent content, interaction, selection, state, comparison, or another distinct containment purpose.
+- Treat a containing section surface as existing group containment. Nested child cards require a second, distinct purpose. Before adding a second consecutive card-led specimen or example section, review the page for cardification and flatten at least one set unless the task genuinely requires repeated independent or comparable modules; do not impose a universal numeric cap.
+- Cards with the same purpose must use the same verified Telegrafen component and variant. Use different variants only when function, hierarchy, interaction, or state differs, and use supported light- or dark-mode treatments rather than style overrides.
+- An interactive Card contract must define the supported action and visible states. A static Card contract must not imitate interaction through unsupported hover treatments, action chevrons, cursor cues, or elevation. Do not expose nested competing actions unless the verified component contract supports them.
+- Peer card instances in the same row, comparison set, or specimen should use consistent widths and visually aligned heights when they represent equivalent choices. Align equivalent internal regions when this improves scanning.
+- Achieve alignment with Auto Layout, shared structure, consistent padding, and supported fill or hug behaviour. Never use empty items, invisible filler, fake copy, clipping, or truncation to equalize cards.
+- Cards with different purposes or hierarchy do not need matching dimensions. When realistic content varies too much for sound equal-height treatment, revise the layout or allow natural height.
 
 ### Layout, modes, and accessibility
 
@@ -197,6 +220,8 @@ Call the result a **draft product component** or **Telegrafen component candidat
 
 ## WCAG delivery gate
 
+Before every handoff, inspect fresh screenshots of every changed component, affected example, and visible state at the supported sizes in scope. Check clipping, overlap, gaps, off-canvas elements, peer icon-family commitment and slot consistency, component and token provenance, unapproved effects, empty list items, dark-mode treatment, card-contract purpose, redundant containment, consecutive cardification, static or interactive affordance, repeated-card alignment, typography, and contrast. Fix clear in-scope defects and reinspect; a draft may report unfinished defects, but it must name them.
+
 Before every delivery, run a [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Level AA design review on every visible mode and state in scope:
 
 - Normal text has at least 4.5:1 contrast; WCAG large text has at least 3:1.
@@ -207,7 +232,7 @@ Before every delivery, run a [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Level AA 
 
 Run the review separately for every supported light and dark context. A Figma review validates design evidence only; it cannot prove implementation semantics or full product conformance.
 
-Never omit the result from the handoff. State `WCAG 2.2 AA design review: PASS`, `NEEDS CHANGES`, or `BLOCKED`, followed by the modes and states checked, failures or exceptions, and implementation-only items that could not be verified.
+Never omit the results from the handoff. State `Visual QA: PASS`, `NEEDS CHANGES`, or `BLOCKED`, followed by `WCAG 2.2 AA design review: PASS`, `NEEDS CHANGES`, or `BLOCKED`, the modes and states checked, failures or exceptions, and implementation-only items that could not be verified.
 
 Never pass structural QA from screenshots alone. If component properties, variants, layer structure, metadata, or variable bindings cannot be inspected, report `Structure and API: BLOCKED` and state what access or evidence is missing.
 
@@ -248,13 +273,15 @@ For Build & Iterate, report:
 - Components, variants, and properties created or changed
 - Telegrafen libraries and token families used
 - Targeted checks performed
+- `Visual QA: PASS`, `NEEDS CHANGES`, or `BLOCKED`
 - `WCAG 2.2 AA design review: PASS`, `NEEDS CHANGES`, or `BLOCKED`, including modes and states checked, exceptions or failures, and implementation-only items not verified
 - Remaining questions, if any
 
 For Review & QA or Repair & Finalize, report separately:
 
 - `Structure and API: PASS`, `NEEDS CHANGES`, or `BLOCKED`
-- `Visual and WCAG: PASS`, `NEEDS CHANGES`, or `BLOCKED`, including the required WCAG 2.2 AA result
+- `Visual QA: PASS`, `NEEDS CHANGES`, or `BLOCKED`
+- `WCAG 2.2 AA design review: PASS`, `NEEDS CHANGES`, or `BLOCKED`
 - `Overall: Complete`, `Incomplete`, or `BLOCKED`
 
-Overall is `Complete` only when both required reviews pass. Include the final node link, contract coverage, affected dependencies and examples, compatibility or migration impact, implementation-only accessibility requirements, and unresolved limitations.
+Overall is `Complete` only when all required reviews pass. Include the final node link, contract coverage, affected dependencies and examples, compatibility or migration impact, implementation-only accessibility requirements, and unresolved limitations.
